@@ -8,14 +8,16 @@ Verdea is intentionally focused on a polished first release:
 
 - Home, Shop, Product Details, Cart, Plant Care, About and 404 pages
 - Mock/local plant catalog
-- Search, category and pet-friendly filters
-- Price/rating sorting
+- Search with category, price, light, watering and pet-friendly filters
+- Recommended, price and rating sorting
 - Product care information
-- Add/remove/update cart items
+- Add/remove/update cart items with stock limits
 - Cart persistence with localStorage
 - Responsive mobile/tablet/desktop UI
 - Loading, empty, no-results and error states
-- Accessible labels, focusable controls and semantic structure
+- Keyboard skip navigation, accessible names and visible focus states
+- Optimized remote plant images with Next Image
+- End-to-end smoke tests for the main shopping flow
 
 ## Run locally
 
@@ -34,6 +36,15 @@ npm run build
 npm start
 ```
 
+For the browser smoke-test suite:
+
+```bash
+npx playwright install
+npm run test:e2e
+```
+
+The CI workflow runs typecheck, production build, and Playwright tests on pushes and pull requests to `main`.
+
 ## Stack
 
 - Next.js App Router
@@ -41,6 +52,7 @@ npm start
 - Bootstrap 5 + Bootstrap Icons
 - Local mock data for V1
 - localStorage for the cart
+- Playwright for end-to-end testing
 
 Strapi/API integration is intentionally deferred to a later version.
 
@@ -58,6 +70,23 @@ Strapi/API integration is intentionally deferred to a later version.
 - **Ava** — architecture, integration, pages, shared state and final V1 integration.
 - **Yasamin** — visual design, brand direction, UI polish and frontend components.
 - **Mahla** — product data, filtering/search logic, cart logic and future API/data work.
+
+## V1 release checklist
+
+Before calling a release ready, verify:
+
+- [ ] `npm install` completes successfully
+- [ ] `npm run typecheck` passes
+- [ ] `npm run build` passes
+- [ ] `npm run test:e2e` passes in CI
+- [ ] Home → Shop → Product → Cart works
+- [ ] Search, filters and sorting work together
+- [ ] Cart quantity, removal and persistence work
+- [ ] Invalid product URLs show the custom 404 state
+- [ ] Keyboard navigation and skip navigation work
+- [ ] Responsive layout has no obvious horizontal overflow
+- [ ] No blocking console errors remain
+- [ ] All required PRs are merged into `main`
 
 ## Product model
 
