@@ -17,6 +17,8 @@ a { color: inherit; text-decoration: none; }
 button, input, select { font: inherit; }
 ::selection { background: var(--soft-sage); color: var(--forest-dark); }
 :focus-visible { outline: 3px solid var(--terracotta); outline-offset: 3px; }
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 2000; background: var(--forest-dark); color: white; padding: .7rem 1rem; border-radius: 0 0 10px 10px; font-weight: 700; }
+.skip-link:focus { top: 0; }
 
 .site-navbar { background: rgba(255,253,248,.94); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; }
 .brand { color: var(--forest); font-size: 1.45rem; font-weight: 800; letter-spacing: -.04em; }

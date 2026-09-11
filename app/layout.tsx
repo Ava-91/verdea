@@ -15,9 +15,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         <CartProvider>
           <Navbar />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>{children}</main>
           <Footer />
         </CartProvider>
       </body>
