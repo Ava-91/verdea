@@ -28,5 +28,5 @@ test("main shopping flow works", async ({ page }) => {
 
 test("invalid product URL shows the not-found page", async ({ page }) => {
   await page.goto("/shop/does-not-exist");
-  await expect(page).toHaveRole("heading", { name: /This leafy corner does not exist/i, level: 1 });
+  await expect(page.getByRole("heading", { name: /This leafy corner does not exist/i, level: 1 })).toBeVisible();
 });
