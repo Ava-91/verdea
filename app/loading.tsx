@@ -1,0 +1,1 @@
+export default function Loading() { return <div className="loading-box" role="status" aria-label="Loading"><div className="spinner-border text-success" /><span className="visually-hidden">Loading…</span></div>; }
