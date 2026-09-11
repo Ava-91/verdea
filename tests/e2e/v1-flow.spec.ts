@@ -27,5 +27,5 @@ test("main shopping flow works", async ({ page }) => {
 
 test("invalid product URL shows the not-found page", async ({ page }) => {
   await page.goto("/shop/does-not-exist");
-  await expect(page.getByText(/not found/i)).toBeVisible();
+  await expect(page.getByText(/leafy corner does not exist/i)).toBeVisible();
 });
