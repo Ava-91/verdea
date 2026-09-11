@@ -18,7 +18,7 @@ test("main shopping flow works", async ({ page }) => {
 
   await page.getByRole("link", { name: /View details for Snake Plant/ }).click();
   await expect(page).toHaveURL(/\/shop\/snake-plant$/);
-  await page.getByRole("button", { name: /Add Snake Plant to cart/ }).click();
+  await page.getByRole("button", { name: "Add to cart" }).click();
 
   await page.getByRole("link", { name: /Cart with 1 items/ }).click();
   await expect(page).toHaveURL(/\/cart$/);
