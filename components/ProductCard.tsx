@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/product";
 import { useCart } from "@/components/CartProvider";
@@ -9,7 +10,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="product-card" aria-label={product.name}>
       <Link href={`/shop/${product.slug}`} className="product-image" aria-label={`View details for ${product.name}`}>
-        <img src={product.image} alt={product.name} loading="lazy" />
+        <Image src={product.image} alt={product.name} width={900} height={945} sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw" />
       </Link>
       <div className="product-body">
         <span className="product-category">{product.category}</span>
