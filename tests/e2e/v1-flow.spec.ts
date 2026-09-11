@@ -4,9 +4,9 @@ test("main shopping flow works", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/Verdea/);
 
-  await page.getByRole("link", { name: "Shop" }).click();
+  await page.getByRole("link", { name: "Shop", exact: true }).click();
   await expect(page).toHaveURL(/\/shop$/);
-  await expect(page.getByText(/6 plants/)).toBeVisible();
+  await expect(page.getByText("6 plants", { exact: true })).toBeVisible();
 
   await page.getByLabel("Search plants").fill("Snake");
   await expect(page.getByRole("article", { name: "Snake Plant" })).toBeVisible();
@@ -14,18 +14,19 @@ test("main shopping flow works", async ({ page }) => {
 
   await page.getByLabel("Search plants").fill("");
   await page.getByLabel("Price").selectOption("under-30");
-  await expect(page.getByText(/plants/)).toBeVisible();
+  await expect(page.getByRole("article", { name: "Snake Plant" })).toBeVisible();
 
-  await page.getByRole("link", { name: /View details for Snake Plant/ }).click();
+  await page.getByRole("link", { name: "View details for Snake Plant", exact: true }).click();
   await expect(page).toHaveURL(/\/shop\/snake-plant$/);
   await page.getByRole("button", { name: "Add to cart" }).click();
 
-  await page.getByRole("link", { name: /Cart with 1 items/ }).click();
+  await expect(page.getByRole("link", { name: "Cart with 1 items", exact: true })).toBeVisible();
+  await page.getByRole("link", { name: "Cart with 1 items", exact: true }).click();
   await expect(page).toHaveURL(/\/cart$/);
-  await expect(page.getByText("Snake Plant")).toBeVisible();
+  await expect(page.getByText("Snake Plant", { exact: true })).toBeVisible();
 });
 
 test("invalid product URL shows the not-found page", async ({ page }) => {
   await page.goto("/shop/does-not-exist");
-  await expect(page.getByText(/leafy corner does not exist/i)).toBeVisible();
+  await expect(page).toHaveRole("heading", { name: /This leafy corner does not exist/i, level: 1 });
 });
