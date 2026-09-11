@@ -22,3 +22,7 @@ jobs:
         run: npm run typecheck
       - name: Production build
         run: npm run build
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium firefox
+      - name: End-to-end tests
+        run: npm run test:e2e
