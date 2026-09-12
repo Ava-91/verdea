@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 const siteUrl = "https://verdea-blue.vercel.app";
 const siteTitle = "Verdea | Plant Shop & Care Guide";
 const siteDescription = "Shop thoughtfully chosen plants and learn simple, practical care tips for a greener home.";
+const socialImage = "/opengraph-image";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,10 +27,10 @@ export const metadata: Metadata = {
     siteName: "Verdea",
     images: [
       {
-        url: "/assets/verdea-og.svg",
+        url: socialImage,
         width: 1200,
         height: 630,
-        alt: "Verdea plant shop",
+        alt: "Verdea plant shop and care guide",
       },
     ],
   },
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/assets/verdea-og.svg"],
+    images: [socialImage],
   },
   icons: {
     icon: "/assets/verdea-mark.svg",
