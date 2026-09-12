@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/components/CartProvider";
@@ -15,8 +16,8 @@ export function Navbar() {
     <header className="site-navbar">
       <nav className="navbar navbar-expand-lg py-3" aria-label="Main navigation">
         <div className="container">
-          <Link href="/" className="brand d-flex align-items-center gap-2" onClick={() => setOpen(false)}>
-            <span className="brand-mark" aria-hidden="true"><i className="bi bi-flower1" /></span>Verdea
+          <Link href="/" className="brand" onClick={() => setOpen(false)} aria-label="Verdea home">
+            <Image src="/assets/verdea-logo.svg" alt="Verdea" width={140} height={32} priority />
           </Link>
           <button className="navbar-toggler" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="verdeaNav" aria-label="Toggle navigation">
             <i className="bi bi-list" />
