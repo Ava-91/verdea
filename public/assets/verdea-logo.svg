@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">Verdea</title>
+  <desc id="desc">Verdea wordmark with a simple botanical leaf mark</desc>
+  <g fill="none" stroke="#234236" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#C7D5C0" stroke="none" d="M48 6c22 4 38 19 42 41C71 48 54 34 48 6Z"/>
+    <path fill="#8FA58F" stroke="none" d="M48 6C25 11 10 27 8 51c23-2 38-16 40-45Z"/>
+    <path stroke="#234236" stroke-width="4" d="M48 9c-2 25-1 47 8 69"/>
+    <path stroke="#234236" stroke-width="4" d="M47 37 27 27M49 50l24-14"/>
+  </g>
+  <text x="112" y="65" fill="#234236" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" letter-spacing="-2">Verdea</text>
+</svg>
