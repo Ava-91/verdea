@@ -8,7 +8,7 @@ export function Footer() {
         <div className="row g-4 pb-5">
           <div className="col-lg-6">
             <Link href="/" className="footer-brand d-inline-flex align-items-center gap-2 mb-3" aria-label="Verdea home">
-              <Image src="/assets/verdea-mark.svg" alt="" width={42} height={42} />
+              <Image src="/assets/verdea-mark.svg" alt="Verdea" width={42} height={42} />
               <span>Verdea</span>
             </Link>
             <p className="mb-0" style={{ maxWidth: 520 }}>Plants for slower mornings, greener corners, and homes that feel a little more alive.</p>
