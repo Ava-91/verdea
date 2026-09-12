@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Verdea plant shop</title>
+  <desc id="desc">Thoughtfully chosen plants and simple care guidance for a greener home.</desc>
+  <rect width="1200" height="630" fill="#f7f4ea"/>
+  <circle cx="1010" cy="105" r="210" fill="#c7d5c0" opacity=".72"/>
+  <circle cx="1060" cy="530" r="260" fill="#8fa58f" opacity=".34"/>
+  <path d="M885 500c-45-130-32-264 58-348 54-50 104-55 141-48-2 62-29 131-82 182-38 36-77 61-117 79Z" fill="#234236" opacity=".92"/>
+  <path d="M930 470c65-104 108-193 142-315" fill="none" stroke="#c98262" stroke-width="10" stroke-linecap="round"/>
+  <text x="100" y="245" fill="#182f27" font-family="Georgia, Times New Roman, serif" font-size="104" font-weight="700">Verdea</text>
+  <text x="105" y="325" fill="#6e7b73" font-family="Arial, Helvetica, sans-serif" font-size="34">Plant shop &amp; care guide</text>
+  <text x="105" y="390" fill="#234236" font-family="Arial, Helvetica, sans-serif" font-size="25">Bring nature home.</text>
+</svg>
