@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Verdea mark</title>
+  <desc id="desc">Minimal botanical leaf symbol for Verdea</desc>
+  <circle cx="48" cy="48" r="46" fill="#F7F4EA"/>
+  <path fill="#C7D5C0" d="M48 10c22 4 38 19 42 41C71 52 54 38 48 10Z"/>
+  <path fill="#8FA58F" d="M48 10C25 15 10 31 8 55c23-2 38-16 40-45Z"/>
+  <g fill="none" stroke="#234236" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 13c-2 25-1 47 8 69"/>
+    <path d="M47 41 27 31M49 54l24-14"/>
+  </g>
+</svg>
