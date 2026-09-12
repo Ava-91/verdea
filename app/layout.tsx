@@ -9,6 +9,9 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Verdea — Bring nature home",
   description: "A calm, modern plant shop with everything you need to find and care for your next plant.",
+  icons: {
+    icon: "/assets/verdea-mark.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
