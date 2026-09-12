@@ -11,12 +11,12 @@ export function Footer() {
               <Image src="/assets/verdea-mark.svg" alt="Verdea" width={42} height={42} />
               <span>Verdea</span>
             </Link>
-            <p className="mb-0" style={{ maxWidth: 520 }}>Plants for slower mornings, greener corners, and homes that feel a little more alive.</p>
+            <p className="mb-0" style={{ maxWidth: 520 }}>A plant shop for slower mornings, greener corners, and homes that feel a little more alive. Browse our collection and find the right plant for your space.</p>
           </div>
           <div className="col-6 col-lg-3"><h2 className="h6 text-white">Explore</h2><div className="d-grid gap-2 mt-3"><Link href="/shop">Shop</Link><Link href="/plant-care">Plant Care</Link><Link href="/about">About</Link></div></div>
-          <div className="col-6 col-lg-3"><h2 className="h6 text-white">Project</h2><p className="small mb-0">A collaborative Next.js + TypeScript + Bootstrap V1 plant shop.</p></div>
+          <div className="col-6 col-lg-3"><h2 className="h6 text-white">Verdea</h2><p className="small mb-0">A curated plant shop with practical care information, clear product details, and an easy way to find plants for your home.</p></div>
         </div>
-        <div className="border-top border-light border-opacity-10 pt-3 small">© {new Date().getFullYear()} Verdea. Built with care.</div>
+        <div className="border-top border-light border-opacity-10 pt-3 small">© {new Date().getFullYear()} Verdea. Plants chosen with care.</div>
       </div>
     </footer>
   );
