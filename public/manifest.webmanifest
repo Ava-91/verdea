@@ -1,0 +1,17 @@
+{
+  "name": "Verdea — Plant Shop & Care Guide",
+  "short_name": "Verdea",
+  "description": "Shop thoughtfully chosen plants and learn simple, practical care tips for a greener home.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffdf8",
+  "theme_color": "#234236",
+  "icons": [
+    {
+      "src": "/assets/verdea-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
