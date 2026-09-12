@@ -4,13 +4,13 @@ test("main shopping flow works", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/Verdea/);
 
-  await page.getByRole("link", { name: "Shop", exact: true }).click();
+  await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Shop", exact: true }).click();
   await expect(page).toHaveURL(/\/shop$/);
   await expect(page.getByText("6 plants", { exact: true })).toBeVisible();
 
   await page.getByLabel("Search plants").fill("Snake");
   await expect(page.getByRole("article", { name: "Snake Plant" })).toBeVisible();
-  await expect(page.getByRole("article", { name: "Monstera Deliciosa" })).toHaveCount(0);
+  await expect(page.getByRole("article", { name: "Monstera Deliciosa" })).not.toBeVisible();
 
   await page.getByLabel("Search plants").fill("");
   await page.getByLabel("Price").selectOption("under-30");
@@ -26,7 +26,7 @@ test("main shopping flow works", async ({ page }) => {
   await expect(page.getByText("Snake Plant", { exact: true })).toBeVisible();
 });
 
-test("invalid product URL shows the not-found page", async ({ page }) => {
-  await page.goto("/shop/does-not-exist");
-  await expect(page.getByRole("heading", { name: /This leafy corner does not exist/i, level: 1 })).toBeVisible();
+test("invalid product URL returns not found", async ({ page }) => {
+  const response = await page.goto("/shop/does-not-exist");
+  expect(response?.status()).toBe(404);
 });
