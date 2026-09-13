@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
+import "./verdea-polish.css";
 import { CartProvider } from "@/components/CartProvider";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
