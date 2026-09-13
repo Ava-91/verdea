@@ -5,5 +5,121 @@ import { useCart } from "@/components/CartProvider";
 
 export default function CartPage() {
   const { items, total, updateQuantity, removeFromCart } = useCart();
-  return <section className="section"><div className="container"><div className="mb-5"><span className="eyebrow">Your plants</span><h1 className="section-title mt-2">Shopping cart.</h1><p className="section-subtitle mb-0">Review your plants and adjust quantities before checkout.</p></div>{!items.length ? <div className="empty-state"><i className="bi bi-bag-heart fs-1" /><h2 className="h3 mt-3">Your cart is feeling very empty.</h2><p className="text-secondary">Find a plant to bring home and it will appear here.</p><Link href="/shop" className="btn btn-verdea mt-2">Browse plants</Link></div> : <div className="row g-5"><div className="col-lg-8">{items.map((item) => <div className="cart-item d-flex gap-3 align-items-center" key={item.id}><img src={item.image} alt="" width="96" height="96" className="cart-item-image" /><div className="flex-grow-1"><Link href={`/shop/${item.slug}`} className="fw-bold">{item.name}</Link><div className="small text-secondary mt-1">${item.price} each</div><div className="quantity-control mt-2" aria-label={`Quantity for ${item.name}`}><button onClick={() => updateQuantity(item.id, item.quantity - 1)} aria-label="Decrease quantity">−</button><span>{item.quantity}</span><button onClick={() => updateQuantity(item.id, item.quantity + 1)} disabled={item.quantity >= item.stock} aria-label="Increase quantity">+</button></div></div><div className="text-end"><strong>${item.price * item.quantity}</strong><button className="btn btn-link text-danger d-block px-0" onClick={() => removeFromCart(item.id)}>Remove</button></div></div>)}<Link href="/shop" className="btn btn-outline-verdea mt-4">Continue shopping</Link></div><div className="col-lg-4"><div className="summary-card"><span className="product-category">Order</span><h2 className="h5 mt-1">Order summary</h2><div className="d-flex justify-content-between mt-4"><span>Subtotal</span><strong>${total}</strong></div><div className="d-flex justify-content-between text-secondary small mt-2"><span>Shipping</span><span>Calculated later</span></div><hr /><div className="d-flex justify-content-between"><strong>Total</strong><strong className="price">${total}</strong></div><button className="btn btn-verdea w-100 mt-4" disabled>Checkout coming in V2</button></div></div></div>}</div></section>;
+
+  return (
+    <section className="section cart-page">
+      <div className="container">
+        <div className="cart-header mb-5">
+          <span className="eyebrow">Your plants</span>
+          <h1 className="section-title mt-2">Shopping cart.</h1>
+          <p className="section-subtitle mb-0">
+            Review your plants and adjust quantities before checkout.
+          </p>
+        </div>
+
+        {!items.length ? (
+          <div className="empty-state cart-empty">
+            <i className="bi bi-bag-heart fs-1" />
+            <h2 className="h3 mt-3">Your cart is feeling very empty.</h2>
+            <p className="text-secondary">
+              Find a plant to bring home and it will appear here.
+            </p>
+            <Link href="/shop" className="btn btn-verdea mt-2">
+              Browse plants
+            </Link>
+          </div>
+        ) : (
+          <div className="row g-5 cart-layout">
+            <div className="col-lg-8">
+              <div className="cart-items">
+                {items.map((item) => (
+                  <div className="cart-item d-flex gap-3 align-items-center" key={item.id}>
+                    <img
+                      src={item.image}
+                      alt=""
+                      width="96"
+                      height="96"
+                      className="cart-item-image"
+                    />
+
+                    <div className="flex-grow-1 cart-item-info">
+                      <Link href={`/shop/${item.slug}`} className="cart-item-name">
+                        {item.name}
+                      </Link>
+                      <div className="small text-secondary mt-1">
+                        ${item.price} each
+                      </div>
+
+                      <div
+                        className="quantity-control mt-2"
+                        aria-label={`Quantity for ${item.name}`}
+                      >
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          aria-label="Decrease quantity"
+                        >
+                          −
+                        </button>
+                        <span>{item.quantity}</span>
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          disabled={item.quantity >= item.stock}
+                          aria-label="Increase quantity"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="text-end cart-item-actions">
+                      <strong className="cart-item-total">
+                        ${item.price * item.quantity}
+                      </strong>
+                      <button
+                        className="btn btn-link text-danger d-block px-0 cart-remove"
+                        onClick={() => removeFromCart(item.id)}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/shop" className="btn btn-outline-verdea mt-4">
+                Continue shopping
+              </Link>
+            </div>
+
+            <div className="col-lg-4">
+              <div className="summary-card cart-summary">
+                <span className="product-category">Order</span>
+                <h2 className="h5 mt-1">Order summary</h2>
+
+                <div className="d-flex justify-content-between mt-4">
+                  <span>Subtotal</span>
+                  <strong>${total}</strong>
+                </div>
+                <div className="d-flex justify-content-between text-secondary small mt-2">
+                  <span>Shipping</span>
+                  <span>Calculated later</span>
+                </div>
+
+                <hr />
+
+                <div className="d-flex justify-content-between cart-total-row">
+                  <strong>Total</strong>
+                  <strong className="price">${total}</strong>
+                </div>
+
+                <button className="btn btn-verdea w-100 mt-4" disabled>
+                  Checkout coming in V2
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }
