@@ -39,25 +39,25 @@ export const products: Product[] = [
   },
   {
     id: 7, slug: "rubber-plant", name: "Rubber Plant", price: 36, category: "Indoor",
-    image: "https://images.pexels.com/photos/13440778/pexels-photo-13440778.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5JFz5y7qUvfo5cWywSAQMdce9kyxkPfUZ8Kp0hgldYQlDrZizGfZDAxKl&s=10",
     description: "Bold, glossy foliage that adds a deep green accent to bright rooms.",
     light: "Bright indirect", watering: "Every 1–2 weeks", temperature: "18–28°C", petFriendly: false, size: "Medium", rating: 4.8, stock: 10
   },
   {
     id: 8, slug: "aloe-vera", name: "Aloe Vera", price: 22, category: "Beginner Friendly",
-    image: "https://images.pexels.com/photos/13588916/pexels-photo-13588916.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://www.healthyhouseplants.com/wp-content/uploads/2024/08/Aloe_Vera-1200x1200.jpg",
     description: "A compact succulent that loves bright light and prefers its soil to dry between waterings.",
     light: "Bright", watering: "Every 2–3 weeks", temperature: "16–30°C", petFriendly: false, size: "Small", rating: 4.7, stock: 15
   },
   {
     id: 9, slug: "fiddle-leaf-fig", name: "Fiddle Leaf Fig", price: 48, category: "Indoor",
-    image: "https://images.pexels.com/photos/4107251/pexels-photo-4107251.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7QxFc79VF1YRCGyZL-GwN7F8G7wX_OaTGdA2N4bo5fHg_HWW3svCe1i8&s=10",
     description: "Large sculptural leaves that make a striking statement in a bright living space.",
     light: "Bright indirect", watering: "Weekly", temperature: "18–28°C", petFriendly: false, size: "Large", rating: 4.6, stock: 5
   },
   {
     id: 10, slug: "spider-plant", name: "Spider Plant", price: 25, category: "Pet Friendly",
-    image: "https://images.pexels.com/photos/5331915/pexels-photo-5331915.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9gpZb1tfyHWXwhvXtei_n2UiVuL1LwwvBMhqJDpAE3P099eNYKXK75aM&s=10",
     description: "An easygoing plant with arching leaves, perfect for shelves and hanging planters.",
     light: "Medium indirect", watering: "Weekly", temperature: "15–27°C", petFriendly: true, size: "Small", rating: 4.9, stock: 12
   }
