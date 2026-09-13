@@ -36,6 +36,30 @@ export const products: Product[] = [
     image: "/assets/pictures/peace-lily.jpg",
     description: "Elegant dark leaves and delicate white blooms for a calm corner with indirect light.",
     light: "Medium indirect", watering: "Weekly", temperature: "18–27°C", petFriendly: false, size: "Medium", rating: 4.7, stock: 7
+  },
+  {
+    id: 7, slug: "rubber-plant", name: "Rubber Plant", price: 36, category: "Indoor",
+    image: "/assets/pictures/rubber-plant.svg",
+    description: "Bold, glossy foliage that adds a deep green accent to bright rooms.",
+    light: "Bright indirect", watering: "Every 1–2 weeks", temperature: "18–28°C", petFriendly: false, size: "Medium", rating: 4.8, stock: 10
+  },
+  {
+    id: 8, slug: "aloe-vera", name: "Aloe Vera", price: 22, category: "Beginner Friendly",
+    image: "/assets/pictures/aloe-vera.svg",
+    description: "A compact succulent that loves bright light and prefers its soil to dry between waterings.",
+    light: "Bright", watering: "Every 2–3 weeks", temperature: "16–30°C", petFriendly: false, size: "Small", rating: 4.7, stock: 15
+  },
+  {
+    id: 9, slug: "fiddle-leaf-fig", name: "Fiddle Leaf Fig", price: 48, category: "Indoor",
+    image: "/assets/pictures/fiddle-leaf-fig.svg",
+    description: "Large sculptural leaves that make a striking statement in a bright living space.",
+    light: "Bright indirect", watering: "Weekly", temperature: "18–28°C", petFriendly: false, size: "Large", rating: 4.6, stock: 5
+  },
+  {
+    id: 10, slug: "spider-plant", name: "Spider Plant", price: 25, category: "Pet Friendly",
+    image: "/assets/pictures/spider-plant.svg",
+    description: "An easygoing plant with arching leaves, perfect for shelves and hanging planters.",
+    light: "Medium indirect", watering: "Weekly", temperature: "15–27°C", petFriendly: true, size: "Small", rating: 4.9, stock: 12
   }
 ];
 
