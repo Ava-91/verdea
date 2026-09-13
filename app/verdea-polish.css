@@ -1,0 +1,223 @@
+/* Final visual polish for Verdea */
+
+body {
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  min-height: 55vh;
+}
+
+.site-navbar .navbar {
+  min-height: 72px;
+}
+
+.brand {
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+  opacity: .92;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  bottom: -170px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.28);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-copy {
+  padding-block: 1rem;
+}
+
+.hero h1 {
+  text-wrap: balance;
+}
+
+.hero-plant {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-plant::before,
+.hero-plant::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  pointer-events: none;
+}
+
+.hero-plant::before {
+  width: 180px;
+  height: 180px;
+  top: 12%;
+  right: 8%;
+}
+
+.hero-plant::after {
+  width: 100px;
+  height: 100px;
+  bottom: 10%;
+  left: 8%;
+}
+
+.hero-plant i {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 14px 18px rgba(35,66,54,.14));
+  transition: transform .35s ease;
+}
+
+.hero-plant:hover i {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.btn-verdea,
+.btn-outline-verdea {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  aspect-ratio: 1 / 1;
+}
+
+.product-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.product-body > .d-flex {
+  margin-top: auto !important;
+  padding-top: 1rem;
+}
+
+.product-name {
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.product-card .btn-verdea {
+  white-space: nowrap;
+}
+
+.filter-bar {
+  position: relative;
+}
+
+.filter-bar::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  top: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--soft-sage);
+}
+
+.form-control::placeholder {
+  color: #89948d;
+  opacity: 1;
+}
+
+.info-card h3 {
+  color: var(--forest-dark);
+  font-weight: 800;
+}
+
+.detail-content h1,
+.detail-content h2,
+.detail-content h3 {
+  color: var(--forest-dark);
+}
+
+.detail-content p {
+  line-height: 1.8;
+}
+
+.summary-card h2,
+.summary-card h3 {
+  color: var(--forest-dark);
+}
+
+.empty-state {
+  box-shadow: 0 12px 30px rgba(35,66,54,.05);
+}
+
+@media (min-width: 992px) {
+  .site-navbar .navbar {
+    padding-top: .65rem !important;
+    padding-bottom: .65rem !important;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .cart-pill {
+    padding-inline: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-navbar .navbar {
+    min-height: 64px;
+  }
+
+  .hero-copy {
+    padding-block: 0;
+  }
+
+  .hero-plant {
+    border-radius: 28px;
+  }
+
+  .product-body {
+    padding: 1rem;
+  }
+
+  .product-body > .d-flex {
+    align-items: stretch !important;
+    flex-wrap: wrap;
+  }
+
+  .product-body .btn-verdea {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-body > .d-flex {
+    flex-direction: column;
+  }
+
+  .product-body .btn-verdea {
+    width: 100%;
+  }
+}
