@@ -1,34 +1,61 @@
 # 🌿 Verdea
 
-A calm, modern plant shop built collaboratively with **Next.js, TypeScript, Bootstrap, and GitHub**.
+A calm, modern plant shop built with **Next.js**, **TypeScript**, and **Bootstrap**.
 
-## V1
+Thoughtfully chosen plants, practical care guidance, and a smooth shopping experience — designed collaboratively as a polished V1.
 
-Verdea is intentionally focused on a polished first release:
+**Live demo:** [verdea-blue.vercel.app](https://verdea-blue.vercel.app)
 
-- Home, Shop, Product Details, Cart, Plant Care, About and 404 pages
-- Mock/local plant catalog
-- Search with category, price, light, watering and pet-friendly filters
-- Recommended, price and rating sorting
-- Product care information
-- Add/remove/update cart items with stock limits
-- Cart persistence with localStorage
-- Responsive mobile/tablet/desktop UI
-- Loading, empty, no-results and error states
-- Keyboard skip navigation, accessible names and visible focus states
-- Optimized remote plant images with Next Image
-- End-to-end smoke tests for the main shopping flow
+---
 
-## Run locally
+## Features (V1)
+
+- **Pages:** Home, Shop, Product Details, Cart, Plant Care, About, and custom 404
+- **Catalog:** Local mock plant data with search, category / price / light / watering / pet-friendly filters
+- **Sorting:** Recommended, price, and rating
+- **Cart:** Add / remove / update quantities with stock limits and localStorage persistence
+- **Care info:** Light, watering, temperature, size, and pet-friendly details on every product
+- **UX:** Responsive layout, loading / empty / no-results / error states
+- **Accessibility:** Skip navigation, accessible names, and visible focus states
+- **Images:** Next.js Image optimization (local + remote)
+- **Quality:** TypeScript, production build, and Playwright end-to-end smoke tests
+- **CI:** Typecheck, build, and e2e tests on every push / PR to `main`
+
+Strapi / API integration is intentionally deferred to a later version.
+
+---
+
+## Tech Stack
+
+| Area | Choice |
+|------|--------|
+| Framework | Next.js (App Router) |
+| Language | TypeScript |
+| UI | Bootstrap 5 + Bootstrap Icons |
+| Data (V1) | Local mock catalog |
+| Cart | React context + localStorage |
+| Testing | Playwright |
+| Deploy | Vercel |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- npm
+
+### Install & run
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000).
 
-For a production check:
+### Production check
 
 ```bash
 npm run typecheck
@@ -36,66 +63,95 @@ npm run build
 npm start
 ```
 
-For the browser smoke-test suite:
+### End-to-end tests
 
 ```bash
 npx playwright install
 npm run test:e2e
 ```
 
-The CI workflow runs typecheck, production build, and Playwright tests on pushes and pull requests to `main`.
+The CI workflow runs typecheck, production build, and Playwright tests (Chromium + Firefox) on pushes and pull requests to `main`.
 
-## Stack
+---
 
-- Next.js App Router
-- React + TypeScript
-- Bootstrap 5 + Bootstrap Icons
-- Local mock data for V1
-- localStorage for the cart
-- Playwright for end-to-end testing
+## Project Structure
 
-Strapi/API integration is intentionally deferred to a later version.
+```
+verdea/
+├── app/                  # Next.js App Router pages & layouts
+│   ├── shop/             # Shop listing + product detail ([slug])
+│   ├── cart/
+│   ├── plant-care/
+│   ├── about/
+│   └── ...
+├── components/           # UI components (Navbar, ProductCard, CartProvider, …)
+├── data/                 # Mock product catalog
+├── types/                # Shared TypeScript types (Product, …)
+├── public/assets/        # Logos and plant images
+├── tests/e2e/            # Playwright smoke tests
+└── .github/workflows/    # CI
+```
 
-## Team workflow
+---
+
+## Product Model
+
+Products share a TypeScript model designed to be API-friendly later:
+
+```ts
+id, slug, name, price, image, category,
+description, light, watering, temperature,
+petFriendly, size, rating, stock
+```
+
+Categories currently used: `Indoor`, `Low Light`, `Pet Friendly`, `Beginner Friendly`.
+
+---
+
+## Team Workflow
 
 1. Pick or get assigned an issue.
 2. Create a branch: `feature/issue-<number>-short-name`.
 3. Make focused commits.
-4. Open a PR referencing the issue, e.g. `Closes #12`.
+4. Open a PR that references the issue (e.g. `Closes #12`).
 5. At least one teammate reviews the PR.
-6. Merge into `main` only after the acceptance criteria are met.
+6. Merge into `main` only after acceptance criteria are met.
 
-### Team roles
+### Roles
 
-- **Ava** — architecture, integration, pages, shared state and final V1 integration.
-- **Yasamin** — visual design, brand direction, UI polish and frontend components.
-- **Mahla** — product data, filtering/search logic, cart logic and future API/data work.
+- **Ava** — architecture, integration, pages, shared state, final V1 integration
+- **Yasamin** — visual design, brand direction, UI polish, frontend components
+- **Mahla** — product data, filtering/search logic, cart logic, future API/data work
 
-## V1 release checklist
+---
 
-Before calling a release ready, verify:
+## V1 Release Checklist
+
+Before calling a release ready:
 
 - [ ] `npm install` completes successfully
 - [ ] `npm run typecheck` passes
 - [ ] `npm run build` passes
 - [ ] `npm run test:e2e` passes in CI
-- [ ] Home → Shop → Product → Cart works
-- [ ] Search, filters and sorting work together
-- [ ] Cart quantity, removal and persistence work
-- [ ] Invalid product URLs show the custom 404 state
-- [ ] Keyboard navigation and skip navigation work
+- [ ] Home → Shop → Product → Cart flow works
+- [ ] Search, filters, and sorting work together
+- [ ] Cart quantity, removal, and persistence work
+- [ ] Invalid product URLs show the custom 404
+- [ ] Keyboard navigation and skip link work
 - [ ] Responsive layout has no obvious horizontal overflow
-- [ ] No blocking console errors remain
-- [ ] All required PRs are merged into `main`
+- [ ] No blocking console errors
+- [ ] Required PRs are merged into `main`
 
-## Product model
+---
 
-Products currently use a shared TypeScript model with:
+## V2 Ideas (out of scope for V1)
 
-`id`, `slug`, `name`, `price`, `image`, `category`, `description`, `light`, `watering`, `temperature`, `petFriendly`, `size`, `rating`, `stock`.
+Wishlist, authentication, user profile, orders, checkout, and a Plant Finder quiz.
 
-The model is deliberately API-friendly so the local dataset can later be replaced by Strapi.
+---
 
-## V2 ideas
+Built with care by the Verdea team.
+```
 
-Wishlist, authentication, profile, orders, checkout, and a Plant Finder quiz are intentionally outside V1.
+
+If you reconnect the GitHub connector with write access to this repo, I can push the change for you. Otherwise just replace the current `README.md` with the content above.
