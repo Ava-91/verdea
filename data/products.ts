@@ -165,7 +165,7 @@ export const products: Product[] = [
     name: "Spider Plant",
     price: 25,
     category: "Pet Friendly",
-    image: "https://images.unsplash.com/photo-1614594975526-a5d0d8d9b0b0?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=900&q=80",
     description:
       "An easygoing plant with arching leaves, perfect for shelves and hanging planters.",
     light: "Medium indirect",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     name: "Golden Pothos",
     price: 19,
     category: "Beginner Friendly",
-    image: "https://images.unsplash.com/photo-1593691509547-9c4a5e1c0c1f?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1463320726281-696a485928c7?w=900&q=80",
     description:
       "Trailing vines with heart-shaped leaves. Thrives in almost any indoor light and recovers quickly from missed waterings.",
     light: "Low to bright",

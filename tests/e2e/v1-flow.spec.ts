@@ -6,7 +6,7 @@ test("main shopping flow works", async ({ page }) => {
 
   await page.getByRole("navigation", { name: "Main navigation" }).getByRole("link", { name: "Shop", exact: true }).click();
   await expect(page).toHaveURL(/\/shop$/);
-  await expect(page.getByText("6 plants", { exact: true })).toBeVisible();
+  await expect(page.getByText("18 plants", { exact: true })).toBeVisible();
 
   await page.getByLabel("Search plants").fill("Snake");
   await expect(page.getByRole("article", { name: "Snake Plant" })).toBeVisible();
