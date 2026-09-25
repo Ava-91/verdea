@@ -5,6 +5,9 @@ import { getProductBySlug, products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { AddToCart } from "@/components/AddToCart";
 
+// Only allow known product slugs; everything else is a hard 404
+export const dynamicParams = false;
+
 export function generateStaticParams() { return products.map((product) => ({ slug: product.slug })); }
 
 export default async function ProductDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
